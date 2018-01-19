@@ -1,20 +1,38 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
+  <h1 basicHighlight>
+    {{title}}
   </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <div class="image">
+    <img [src]="image$ | async">
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="form form-horizontal">
+  <div class="form-group">
+    <search-box></search-box>
+  </div>
+  <hr>
+  <div class="form-group">
+    <color-picker #picker (color)="previewer.color = $event"></color-picker>
+    <color-previewer #previewer></color-previewer>
+    <div style="height: 20px"></div>
+    <button class="btn btn-primary center-block" (click)="picker.reset()">Reset</button>
+  </div>
+  <hr>
+  <div class="form-group">
+    <h2 class="text-center">Type a color in the input</h2>
+    <color-input></color-input>
+  </div>
+  <hr>
+  <div class="form-group">
+    <div class="card card-strong" collapse-on-click>
+      <div class="card-header">
+          <i class="collapsible-indicator glyphicon" [ngClass]="isCollapsed ? 'glyphicon-chevron-down' : 'glyphicon-chevron-up'"></i> Collapsible area
+      </div>
+      <div class="collapsible-section">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, illo nam fugit natus mollitia suscipit eaque, autem laudantium aut blanditiis quaerat tempore rem excepturi sequi cumque debitis dolorum dolor officiis.</p>
+      </div>
+    </div>
+  </div>
+</div>
 

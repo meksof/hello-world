@@ -3,12 +3,70 @@
 <head>
   <meta charset="utf-8">
   <title>HelloWorld</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    .card{
+      padding: 10px;
+      border: 1px solid #e8e8e8;
+      box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+    }
+    .card-header{
+      padding: 10px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .collapsible-section{
+      padding: 0 20px 20px 20px
+    }
+    .collapsible-indicator{
+      margin-right: 15px;
+      font-size: 15px;
+      line-height: 15px;
+      cursor: pointer;
+    }
+    .collapsed .collapsible-section{
+      display: none;
+    }
+    .color-preview{
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      display: block;
+      border: 1px solid #ddd;
+      margin-bottom: 15px;
+      border-radius: 5px;
+    }
+    .color-title{
+      font-size: 18px;
+      text-decoration: underline;
+    }
+    .color-sample{
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      margin-left: 15px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+    .color-sample-red{
+      background-color: #de363f;
+    }
+    .color-sample-blue{
+      background-color: #367fde;
+    }
+    .w400{
+      width: 400px;
+    }
+  </style>
 </head>
 <body>
-  <app-root></app-root>
+  <div class="container">
+    <app-root></app-root>
+  </div>
 </body>
 </html>
