@@ -9,19 +9,17 @@ import 'rxjs/Rx';
 })
 export class AppComponent {
   title = 'Hello World';
-  image$: any;
-  imageUrl = "";
-
-  onColor(color){
-    console.log("color:", color)
-  }
-
-  ngOnInit() {    
-    this.imageUrl = "http://lorempixel.com/g/350/200/";
-    this.image$ = this.getImageUrl();
-  }
   
-  getImageUrl() {
-    return Observable.of(this.imageUrl);
+  imageUrl = "http://lorempixel.com/g/350/200/";
+  imageLoading: boolean; // handle loading message
+
+  constructor(){
+    this.imageLoading = true;
+  }
+
+
+  // Loading images from a remote link
+  onLoad() {
+    this.imageLoading = false;
   }
 }

@@ -4,7 +4,8 @@
     {{title}}
   </h1>
   <div class="image">
-    <img [src]="image$ | async">
+    <div *ngIf="imageLoading">Loading ...</div>
+    <img [src]="imageUrl" (load)="onLoad()" />
   </div>
 </div>
 <div class="form form-horizontal">
